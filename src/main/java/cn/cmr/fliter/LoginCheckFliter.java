@@ -1,7 +1,9 @@
 package cn.cmr.fliter;
 
+import cn.cmr.common.BaseContext;
 import cn.cmr.common.R;
 import com.alibaba.fastjson.JSON;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.util.AntPathMatcher;
 
 import javax.servlet.*;
@@ -14,6 +16,7 @@ import java.io.IOException;
  * @author: Java_cmr
  * @Date: 2023/3/8 - 21:01
  */
+@Slf4j
 @WebFilter(filterName = "loginCheckFliter", urlPatterns = "/*")
 public class LoginCheckFliter implements Filter {
     //定义匹配器和需要放行的页面
@@ -22,27 +25,34 @@ public class LoginCheckFliter implements Filter {
             "/employee/login",
             "/employee/logout",
             "/backend/**",
-            "/front/**"
+            "/front/**",
+            "/common/**"
     };
 
     @Override
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletResponse rp = (HttpServletResponse) servletResponse;
         HttpServletRequest rq =  (HttpServletRequest) servletRequest;
-        System.out.println("拦截到请求！" + rq.getRequestURI());
 
         // 验证uri是否符合放行规则
         String requestURI = rq.getRequestURI();
         boolean check = check(requestURI);
 
-        // uri符合放行规则  或者  用户已登录 则放行
-        if(check || (rq.getSession().getAttribute("employee") != null)){
+        // uri符合放行规则
+        if(check){
             filterChain.doFilter(rq, rp);
             return;
         }
-
+        // 用户已登录 放行
+        if(rq.getSession().getAttribute("employee") != null){
+            log.info("线程id为 {}", Thread.currentThread().getId());
+            BaseContext.setCurrentId((Long) rq.getSession().getAttribute("employee"));
+            filterChain.doFilter(rq, rp);
+            return;
+        }
         // 未登录
         // 通过输出流，向客户端页面响应数据
+        System.out.println("拦截到请求！" + rq.getRequestURI());
         rp.getWriter().write(JSON.toJSONString(R.error("NOTLOGIN")));
         return;
 

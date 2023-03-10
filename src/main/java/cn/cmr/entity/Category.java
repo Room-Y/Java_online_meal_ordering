@@ -1,84 +1,71 @@
 package cn.cmr.entity;
 
 import com.baomidou.mybatisplus.annotation.FieldFill;
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import lombok.Data;
-
+import lombok.Getter;
+import lombok.Setter;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
 /**
- * @author: Java_cmr
- * @Date: 2023/3/8 - 16:50
+ * 分类
  */
 @Data
-public class Employee implements Serializable {
+public class Category implements Serializable {
     /**
      * 版本控制号
      */
     private static final long serialVersionUID = 1L;
 
     /**
-     * 主键 id
+     * id标志位
      */
     private Long id;
 
     /**
-     * 员工姓名
+     * 类型 1 菜品分类 2 套餐分类
+     */
+    private Integer type;
+
+    /**
+     * 分类名称
      */
     private String name;
 
     /**
-     * 登录时用户名
+     * 顺序
      */
-    private String username;
+    private Integer sort;
 
     /**
-     * 登陆密码，会加密
-     */
-    private String password;
-
-    /**
-     * 手机号
-     */
-    private String phone;
-
-    /**
-     * 性别
-     */
-    private String sex;
-
-    /**
-     * 身份证号
-     */
-    private String idNumber;
-
-    /**
-     * 用户是否被限制
-     */
-    private Integer status;
-
-    /**
-     * 该用户创建的时间
+     * 创建时间
      */
     @TableField(fill = FieldFill.INSERT)
     private LocalDateTime createTime;
 
     /**
-     * 该用户信息最近一次更新的时间
+     * 更新时间
      */
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private LocalDateTime updateTime;
 
     /**
-     * 该用户创建人，插入时填充字段
+     * 创建人
      */
     @TableField(fill = FieldFill.INSERT)
     private Long createUser;
 
     /**
-     * 最近一次更新该用户信息的人，更新时填充字段
+     * 修改人
      */
     @TableField(fill = FieldFill.INSERT_UPDATE)
     private Long updateUser;
+
+    /**
+     * 关联菜品/套餐数量  是否能够删除
+     */
+//    private Integer isDeleted;
 }
