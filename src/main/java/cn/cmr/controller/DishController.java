@@ -4,6 +4,7 @@ import cn.cmr.common.R;
 import cn.cmr.dto.DishDto;
 import cn.cmr.entity.Category;
 import cn.cmr.entity.Dish;
+import cn.cmr.entity.DishFlavor;
 import cn.cmr.service.CategoryService;
 import cn.cmr.service.DishFlavorService;
 import cn.cmr.service.DishService;
@@ -89,15 +90,43 @@ public class DishController {
         return R.success("菜品修改成功");
     }
 
-    @GetMapping("/list")
-    public R<List<Dish>> list(Dish dish){
-        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
-        queryWrapper.eq(dish.getCategoryId() != null, Dish::getCategoryId, dish.getCategoryId());
-        //只查询启售的菜品
-        queryWrapper.eq(Dish::getStatus, 1);
-        queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+//    @GetMapping("/list")
+//    public R<List<Dish>> list(Dish dish){
+//        LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+//        queryWrapper.eq(dish.getCategoryId() != null, Dish::getCategoryId, dish.getCategoryId());
+//        //只查询启售的菜品
+//        queryWrapper.eq(Dish::getStatus, 1);
+//        queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+//
+//        List<Dish> list = dishService.list(queryWrapper);
+//        return R.success(list);
+//    }
 
-        List<Dish> list = dishService.list(queryWrapper);
-        return R.success(list);
-    }
+        @GetMapping("/list")
+        public R<List<DishDto>> list(Dish dish){
+            LambdaQueryWrapper<Dish> queryWrapper = new LambdaQueryWrapper<>();
+            queryWrapper.eq(dish.getCategoryId() != null, Dish::getCategoryId, dish.getCategoryId());
+            //只查询启售的菜品
+            queryWrapper.eq(Dish::getStatus, 1);
+            queryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+
+            List<Dish> list = dishService.list(queryWrapper);
+
+            //设置菜品的口味信息
+            List<DishDto> dtolist = list.stream().map(item -> {
+                DishDto dishDto = new DishDto();
+
+                BeanUtils.copyProperties(item, dishDto);
+
+                //获取口味
+                Long dishId = item.getId();
+                LambdaQueryWrapper<DishFlavor> queryWrapper1 = new LambdaQueryWrapper<>();
+                queryWrapper1.eq(DishFlavor::getDishId, dishId);
+                List<DishFlavor> flavors = dishFlavorService.list(queryWrapper1);
+                dishDto.setFlavors(flavors);
+                return dishDto;
+            }).collect(Collectors.toList());
+
+            return R.success(dtolist);
+        }
 }

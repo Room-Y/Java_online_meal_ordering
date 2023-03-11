@@ -26,7 +26,9 @@ public class LoginCheckFliter implements Filter {
             "/employee/logout",
             "/backend/**",
             "/front/**",
-            "/common/**"
+            "/common/**",
+            "/user/login",
+            "/user/sendMsg"
     };
 
     @Override
@@ -50,6 +52,15 @@ public class LoginCheckFliter implements Filter {
             filterChain.doFilter(rq, rp);
             return;
         }
+
+        // 用户已登录，放行
+        if(rq.getSession().getAttribute("user") != null){
+            log.info("线程id为 {}", Thread.currentThread().getId());
+            BaseContext.setCurrentId((Long) rq.getSession().getAttribute("user"));
+            filterChain.doFilter(rq, rp);
+            return;
+        }
+
         // 未登录
         // 通过输出流，向客户端页面响应数据
         System.out.println("拦截到请求！" + rq.getRequestURI());

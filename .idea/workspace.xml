@@ -5,16 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c505b62d-071d-46fc-9a78-913d1b3318e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/utils/SMSUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/utils/ValidateCodeUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/AddressBookController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/ShoppingCartController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/entity/AddressBook.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/entity/ShoppingCart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/mapper/AddressBookMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/mapper/ShoppingCartMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/AddressBookService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/ShoppingCartService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/impl/AddressBookServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/impl/ShoppingCartServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/front/cartData.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/DishController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/SetmealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/SetmealController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cmr/service/SetmealService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/SetmealService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cmr/service/impl/SetmealServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/impl/SetmealServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cmr/fliter/LoginCheckFliter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/fliter/LoginCheckFliter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/front/api/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/front/api/login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/front/api/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/front/api/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/front/page/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/front/page/login.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +33,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -53,7 +62,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Java/project/Online_meal_ordering/src/main/java/cn/cmr/utils",
+    "last_opened_file_path": "D:/Java/project/Online_meal_ordering/src/main/java/cn/cmr/entity",
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "89f092c257aada8a98e7232f1c2d82a2",
     "vue.rearranger.settings.migration": "true"
@@ -64,16 +73,17 @@
       <recent name="cn.cmr.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Java\project\Online_meal_ordering\src\main\java\cn\cmr\utils" />
       <recent name="D:\Java\project\Online_meal_ordering\src\main\java\cn\cmr\entity" />
+      <recent name="D:\Java\project\Online_meal_ordering\src\main\java\cn\cmr\controller" />
+      <recent name="D:\Java\project\Online_meal_ordering\src\main\java\cn\cmr\utils" />
       <recent name="D:\Java\project\Online_meal_ordering\src\main\java\cn\cmr\dto" />
       <recent name="D:\Java\project\Online_meal_ordering\src\main\resources\backend\page\demo" />
-      <recent name="D:\Java\project\Online_meal_ordering\src\main\java\cn\cmr\common" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.cmr.mapper" />
+      <recent name="cn.cmr.controller" />
       <recent name="cn.cmr.service.impl" />
       <recent name="cn.cmr.service" />
+      <recent name="cn.cmr.mapper" />
     </key>
   </component>
   <component name="RunManager">
@@ -107,7 +117,7 @@
       <workItem from="1678263398053" duration="12263000" />
       <workItem from="1678325729376" duration="31123000" />
       <workItem from="1678416119986" duration="20391000" />
-      <workItem from="1678512631845" duration="1857000" />
+      <workItem from="1678512631845" duration="17751000" />
     </task>
     <servers />
   </component>
