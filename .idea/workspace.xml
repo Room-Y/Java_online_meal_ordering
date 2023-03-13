@@ -5,25 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c505b62d-071d-46fc-9a78-913d1b3318e7" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/AddressBookController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/ShoppingCartController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/entity/AddressBook.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/entity/ShoppingCart.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/mapper/AddressBookMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/mapper/ShoppingCartMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/AddressBookService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/ShoppingCartService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/impl/AddressBookServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/impl/ShoppingCartServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/front/cartData.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/OrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/OrderDetailController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/entity/OrderDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/entity/Orders.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/mapper/OrderDetailMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/mapper/OrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/OrderDetailService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/OrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/impl/OrderDetailServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/service/impl/OrderServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/DishController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/DishController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/SetmealController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/SetmealController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/cn/cmr/fliter/LoginCheckFliter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/cn/cmr/fliter/LoginCheckFliter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/front/api/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/front/api/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/front/api/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/front/api/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/front/page/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/front/page/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/backend/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/backend/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/backend/page/order/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/backend/page/order/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/backend/styles/icon/demo_index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/backend/styles/icon/demo_index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/front/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/front/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/front/page/address.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/front/page/address.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/front/page/order.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/front/page/order.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/front/page/user.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/front/page/user.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +64,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/Java/project/Online_meal_ordering/src/main/java/cn/cmr/entity",
+    "last_opened_file_path": "D:/Java/project/Online_meal_ordering/src/main/resources/front/page",
     "nodejs_package_manager_path": "npm",
     "spring.configuration.checksum": "89f092c257aada8a98e7232f1c2d82a2",
     "vue.rearranger.settings.migration": "true"
@@ -73,20 +75,36 @@
       <recent name="cn.cmr.controller" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Java\project\Online_meal_ordering\src\main\resources\front\page" />
+      <recent name="D:\Java\project\Online_meal_ordering\src\main\resources\front" />
       <recent name="D:\Java\project\Online_meal_ordering\src\main\java\cn\cmr\entity" />
       <recent name="D:\Java\project\Online_meal_ordering\src\main\java\cn\cmr\controller" />
       <recent name="D:\Java\project\Online_meal_ordering\src\main\java\cn\cmr\utils" />
-      <recent name="D:\Java\project\Online_meal_ordering\src\main\java\cn\cmr\dto" />
-      <recent name="D:\Java\project\Online_meal_ordering\src\main\resources\backend\page\demo" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="cn.cmr.controller" />
       <recent name="cn.cmr.service.impl" />
+      <recent name="cn.cmr.controller" />
       <recent name="cn.cmr.service" />
       <recent name="cn.cmr.mapper" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Spring Boot.MealApplication">
+    <configuration name="MealApplicationTest.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Online_meal_ordering" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="cn.cmr.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="cn.cmr" />
+      <option name="MAIN_CLASS_NAME" value="cn.cmr.MealApplicationTest" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MealApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="Online_meal_ordering" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="cn.cmr.MealApplication" />
@@ -103,6 +121,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.MealApplication" />
+        <item itemvalue="JUnit.MealApplicationTest.test1" />
       </list>
     </recent_temporary>
   </component>
@@ -118,6 +137,8 @@
       <workItem from="1678325729376" duration="31123000" />
       <workItem from="1678416119986" duration="20391000" />
       <workItem from="1678512631845" duration="17751000" />
+      <workItem from="1678554856887" duration="1301000" />
+      <workItem from="1678677875469" duration="15675000" />
     </task>
     <servers />
   </component>

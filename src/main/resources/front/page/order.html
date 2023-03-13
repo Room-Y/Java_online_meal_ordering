@@ -15,10 +15,10 @@
         <!--引入vant样式-->
         <link rel="stylesheet" href="../styles/vant.min.css"/>
         <!--本页面内容的样式-->
-        <link rel="stylesheet" href="./../styles/order.css" />
+        <link rel="stylesheet" href="./../styles/orders.css" />
     </head>
     <body>
-        <div id="order" class="app">
+        <div id="orders" class="app">
             <div class="divHead">
                 <div class="divTitle">
                     <i class="el-icon-arrow-left" @click="goBack"></i>菩提阁
@@ -31,23 +31,23 @@
                     finished-text="没有更多了"
                     @load="getList"
                     >
-                    <van-cell v-for="(order,index) in orderList" :key="index" class="item">
+                    <van-cell v-for="(orders,index) in orderList" :key="index" class="item">
                         <div class="timeStatus">
-                            <span>{{order.orderTime}}</span>
-                            <span>{{getStatus(order.status)}}</span>
+                            <span>{{orders.orderTime}}</span>
+                            <span>{{getStatus(orders.status)}}</span>
                             <!-- <span>正在派送</span> -->
                         </div>
                         <div class="dishList">
-                            <div v-for="(item,index) in order.orderDetails" :key="index" class="item">
+                            <div v-for="(item,index) in orders.orderDetails" :key="index" class="item">
                                 <span>{{item.name}}</span>
                                 <span>x{{item.number}}</span>
                             </div>
                         </div>
                         <div class="result">
-                            <span>共{{order.sumNum}} 件商品,实付</span><span class="price">￥{{order.amount}}</span>
+                            <span>共{{orders.sumNum}} 件商品,实付</span><span class="price">￥{{orders.amount}}</span>
                         </div>
-                        <div class="btn" v-if="order.status === 4">
-                            <div class="btnAgain" @click="addOrderAgain(order)">再来一单</div>
+                        <div class="btn" v-if="orders.status === 4">
+                            <div class="btnAgain" @click="addOrderAgain(orders)">再来一单</div>
                         </div>
                     </van-cell>
                 </van-list>
@@ -68,10 +68,10 @@
         <!-- 引入axios -->
         <script src="../../backend/plugins/axios/axios.min.js"></script>
         <script src="./../js/request.js"></script>
-        <script src="./../api/order.js"></script>
+        <script src="./../api/orders.js"></script>
         <script>
         new Vue({
-            el:"#order",
+            el:"#orders",
             data(){
                 return {
                     paging:{
@@ -130,8 +130,8 @@
                         this.$notify({ type:'warning', message:res.msg});
                     }
                 },
-                async addOrderAgain(order){
-                    const res = await orderAgainApi({id:order.id})
+                async addOrderAgain(orders){
+                    const res = await orderAgainApi({id:orders.id})
                     if(res.code === 1){
                         window.requestAnimationFrame(()=>{
                             window.location.href= '/front/index.html'

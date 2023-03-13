@@ -568,7 +568,7 @@
             toAddOrderPage(){
               if(this.cartData.length > 0){
                 window.requestAnimationFrame(()=>{
-                  window.location.href ='/front/page/add-order.html'
+                  window.location.href ='page/add-order.html'
                 })
               }
             },
@@ -594,9 +594,7 @@
                   this.$notify({ type:'warning', message:res.msg});
                 }
               }
-
             }
-
           }
       })
   </script>

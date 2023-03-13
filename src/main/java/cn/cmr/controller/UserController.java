@@ -71,8 +71,8 @@ public class UserController {
         Object codeInSession = session.getAttribute(phone);
 
         //验证码正确
-//        if(codeInSession != null && codeInSession.equals(code)){
-        if(true){
+        if(codeInSession != null && codeInSession.equals(code)){
+//        if(true){
             //是否需要添加为新用户
             LambdaQueryWrapper<User> queryWrapper = new LambdaQueryWrapper<>();
             queryWrapper.eq(User::getPhone, phone);
